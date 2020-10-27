@@ -1,4 +1,5 @@
 ﻿using AssisterApi.Models;
+using AssisterApi.Models.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,33 +8,34 @@ using System.Threading.Tasks;
 
 namespace AssisterApi.Data.Repositories
 {
-    public class CommentRepository : ICommentRepository
+    public class CustomerRepository : ICustomerRepository
     {
-        private readonly ProjectContext _context;
-        private readonly DbSet<Comment> _comments;
+        private readonly AssisterContext _context;
+        private readonly DbSet<Customer> _customers;
 
 
-        public CommentRepository(ProjectContext dbContext)
+        public CustomerRepository(AssisterContext dbContext)
         {
             _context = dbContext;
-            _comments = _context.Comments;
-        }
-        public void Add(Comment comment)
-        {
-            _comments.Add(comment);
+            _customers = _context.Customers;
         }
 
-        public void Delete(Comment comment)
+        public void Add(Customer customer)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Comment> GetAll()
+        public void Delete(Customer customer)
         {
             throw new NotImplementedException();
         }
 
-        public Comment GetBy(int id)
+        public IEnumerable<Customer> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Customer GetBy(int id)
         {
             throw new NotImplementedException();
         }
@@ -43,7 +45,7 @@ namespace AssisterApi.Data.Repositories
             _context.SaveChanges();
         }
 
-        public void Update(Comment comment)
+        public void Update(Customer customer)
         {
             throw new NotImplementedException();
         }

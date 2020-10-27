@@ -8,6 +8,7 @@ using AssisterApi.Data;
 using AssisterApi.Data.Repositories;
 using AssisterApi.Helpers;
 using AssisterApi.Models;
+using AssisterApi.Models.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -39,7 +40,7 @@ namespace AssisterApi
         {
             services.AddControllers();
 
-            services.AddDbContext<ProjectContext>(options =>
+            services.AddDbContext<AssisterContext>(options =>
                       options.UseSqlServer(Configuration.GetConnectionString("ProjectContext")));
 
             services.AddCors(options => options.AddPolicy("AllowAllOrigins", builder => builder.AllowAnyOrigin()));
@@ -48,11 +49,8 @@ namespace AssisterApi
               );
 
 
-            services.AddScoped<IProjectRepository, ProjectRepository>();
-            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-            services.AddScoped<IProjectEmployeeRepository, ProjectEmployeeRepository>();
-            services.AddScoped<ITaskRepository, TaskRepository>();
-            services.AddScoped<ICommentRepository, CommentRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            
 
             // configure strongly typed settings objects
             var appSettingsSection = Configuration.GetSection("AppSettings");
@@ -80,33 +78,14 @@ namespace AssisterApi
                 
             });
 
-            // configure DI for application services
-            services.AddScoped<IUserService, UserService>();
-            services.AddAuthorization(config =>
-            {
-                config.AddPolicy("Manager", policy =>
-                {
-                    policy.RequireClaim(ClaimTypes.Role, "Manager");
-                    policy.AuthenticationSchemes.Add(JwtBearerDefaults.AuthenticationScheme);
-                    policy.RequireAuthenticatedUser();
-
-                });
-                config.AddPolicy("Worker", policy =>
-                {
-                    policy.RequireClaim(ClaimTypes.Role, "Worker");
-                    policy.AuthenticationSchemes.Add(JwtBearerDefaults.AuthenticationScheme);
-                    policy.RequireAuthenticatedUser();
-
-                });
-
-            });
+           
             services.AddScoped<DataInitializer>();
             services.AddOpenApiDocument(c =>
             {
                 c.DocumentName = "apidocs";
-                c.Title = "DevelinAPI";
+                c.Title = "AssisterApi";
                 c.Version = "v1";
-                c.Description = "Documentation of Develin API.";
+                c.Description = "Documentation of Assister API.";
                 c.AddSecurity("JWT", new OpenApiSecurityScheme
                 {
                     Type = OpenApiSecuritySchemeType.ApiKey,

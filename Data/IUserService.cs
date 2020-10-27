@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 namespace AssisterApi.Data
 {
     public interface IUserService
-    {
+    {/*
         Employee Authenticate(string username, string password);
         IEnumerable<Employee> GetAll();
+        */
     }
 }

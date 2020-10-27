@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace AssisterApi.Data
 {
     public class UserService : IUserService
-    {
+    {/*
         private readonly ProjectContext _context;
         private IEnumerable<Employee> _users;
         private readonly AppSettings _appSettings;
@@ -74,5 +74,6 @@ namespace AssisterApi.Data
             return _users;
 
         }
+        */
     }
 }

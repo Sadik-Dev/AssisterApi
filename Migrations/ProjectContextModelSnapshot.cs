@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AssisterApi.Migrations
 {
-    [DbContext(typeof(ProjectContext))]
+    [DbContext(typeof(AssisterContext))]
     partial class ProjectContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
