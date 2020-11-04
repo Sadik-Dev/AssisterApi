@@ -98,7 +98,7 @@ namespace AssisterApi
 
 
             //Repositories
-
+            services.AddScoped<IUserRepository>();
 
 
 

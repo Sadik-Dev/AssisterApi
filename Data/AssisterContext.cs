@@ -14,6 +14,7 @@ namespace AssisterApi.Data
 
         public DbSet<Folder> Folders { get; set; }
         public DbSet<File> Files { get; set; }
+        public DbSet<User> Users { get; set; }
 
 
         public DbSet<Consultation> Appointments { get; set; }

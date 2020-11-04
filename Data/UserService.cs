@@ -1,5 +1,6 @@
 ﻿using AssisterApi.Helpers;
 using AssisterApi.Models;
+using AssisterApi.Models.Repositories;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -13,22 +14,22 @@ using System.Threading.Tasks;
 namespace AssisterApi.Data
 {
     public class UserService : IUserService
-    {/*
-        private readonly ProjectContext _context;
-        private IEnumerable<Employee> _users;
+    {
+
+        private readonly AssisterContext _context;
+        private IEnumerable<User> _users;
         private readonly AppSettings _appSettings;
 
-        public UserService(ProjectContext context, IOptions<AppSettings> appSettings)
+        public UserService(AssisterContext context, IOptions<AppSettings> appSettings)
         {
             _context = context;
-            _users = context.Employees;
+            _users = context.Users;
             _appSettings = appSettings.Value;
 
         }
 
-        public Employee Authenticate(string username, string password)
+        public User Authenticate(string username, string password)
         {
-            bool isManager; 
             string passEncypted =  Convert.ToBase64String(Encoding.UTF8.GetBytes(password));
 
             var user = _users.SingleOrDefault(x => x.Email == username && x.Password == passEncypted);
@@ -37,20 +38,14 @@ namespace AssisterApi.Data
             if (user == null)
                 return null;
 
-            //Check if he is manager
-            isManager = user.GetType().Name.Equals("Manager")
-                ? true : false;
-
+          
             // authentication successful so generate jwt token
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
 
             Claim claim;
 
-            if (isManager)
-                claim = new Claim(ClaimTypes.Role, "Manager");
-            else
-                claim = new Claim(ClaimTypes.Role, "Worker");
+                claim = new Claim(ClaimTypes.Role, "Doctor");
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
@@ -69,11 +64,11 @@ namespace AssisterApi.Data
             return user;
         }
 
-        public IEnumerable<Employee> GetAll()
+        public IEnumerable<User> GetAll()
         {
             return _users;
 
         }
-        */
+        
     }
 }
