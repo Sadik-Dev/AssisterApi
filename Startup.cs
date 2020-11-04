@@ -78,8 +78,30 @@ namespace AssisterApi
                 
             });
 
-           
+            // configure DI for application services
+            services.AddScoped<IUserService, UserService>();
+            services.AddAuthorization(config =>
+            {
+                config.AddPolicy("Doctor", policy =>
+                {
+                    policy.RequireClaim(ClaimTypes.Role, "Doctor");
+                    policy.AuthenticationSchemes.Add(JwtBearerDefaults.AuthenticationScheme);
+                    policy.RequireAuthenticatedUser();
+
+                });
+              
+
+            });
+
+            //Services
             services.AddScoped<DataInitializer>();
+
+
+            //Repositories
+
+
+
+
             services.AddOpenApiDocument(c =>
             {
                 c.DocumentName = "apidocs";

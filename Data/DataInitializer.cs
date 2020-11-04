@@ -22,7 +22,7 @@ namespace AssisterApi.Data
 
         public void LoadDB()
         {
-               _dbContext.Database.EnsureDeleted();
+               //_dbContext.Database.EnsureDeleted();
                if (_dbContext.Database.EnsureCreated())
                {
                 Customer ahmed = new Customer("Ahmed Sadik", "valenco1@hotmail.be", "singes");

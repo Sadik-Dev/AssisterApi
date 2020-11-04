@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "W:\\AssisterApi\\AssisterApi.csproj": {}
+    "/Users/sana/Documents/GitHub/AssisterApi/AssisterApi.csproj": {}
   },
   "projects": {
-    "W:\\AssisterApi\\AssisterApi.csproj": {
+    "/Users/sana/Documents/GitHub/AssisterApi/AssisterApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\AssisterApi\\AssisterApi.csproj",
+        "projectUniqueName": "/Users/sana/Documents/GitHub/AssisterApi/AssisterApi.csproj",
         "projectName": "AssisterApi",
-        "projectPath": "W:\\AssisterApi\\AssisterApi.csproj",
-        "packagesPath": "C:\\Users\\Dsk0\\.nuget\\packages\\",
-        "outputPath": "W:\\AssisterApi\\obj\\",
+        "projectPath": "/Users/sana/Documents/GitHub/AssisterApi/AssisterApi.csproj",
+        "packagesPath": "/Users/sana/.nuget/packages/",
+        "outputPath": "/Users/sana/Documents/GitHub/AssisterApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dsk0\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/sana/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -91,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.403/RuntimeIdentifierGraph.json"
         }
       }
     }
