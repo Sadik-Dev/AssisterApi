@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using AssisterApi.Data;
+using AssisterApi.DTOs;
 using AssisterApi.Models;
 using AssisterApi.Models.Repositories;
 using Microsoft.AspNetCore.Authorization;
@@ -13,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AssisterApi.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
@@ -40,9 +42,8 @@ namespace AssisterApi.Controllers
         public ActionResult<User> GetUser(int id)
         {
             User employee;
-            int userId = Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
 
-            if (id == -1) employee = _usersRepository.GetBy(userId);
+            if (id == -1) employee = _usersRepository.GetBy(id);
             else
                 employee = _usersRepository.GetBy(id);
 
@@ -60,7 +61,7 @@ namespace AssisterApi.Controllers
         /// Login
         /// </summary>
         /// <returns>The logged in employee</returns>
-        /*    [AllowAnonymous]
+             [AllowAnonymous]
             [HttpPost("authenticate")]
             public IActionResult Authenticate([FromBody] LoginDTO model)
             {
@@ -69,13 +70,13 @@ namespace AssisterApi.Controllers
                     return BadRequest(new { message = "Email or password is incorrect" });
 
                 return Ok(user);
-            }*/
+            }
 
         // POST: api/Employees
         /// <summary>
         /// Make a new User
         /// </summary>
-        [AllowAnonymous]
+        [Authorize]
         [HttpPost]
         public IActionResult PostEmployee(User employee)
         {

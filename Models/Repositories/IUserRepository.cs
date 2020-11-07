@@ -16,5 +16,6 @@ namespace AssisterApi.Models.Repositories
         public void SaveChanges();
 
         public void Update(User user);
+        public void SafeUpdate(User user);
     }
 }

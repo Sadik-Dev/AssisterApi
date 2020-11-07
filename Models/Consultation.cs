@@ -7,8 +7,8 @@ public class Consultation {
      
     public int Id { get; set; }
 	public Customer Customer { get; set; }
+    [Newtonsoft.Json.JsonIgnore]
     public Invoice Invoice { get; set; }
-
     public DateTime Date { get; set; }
 
     public String Type { get; set; }

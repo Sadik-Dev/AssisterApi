@@ -98,7 +98,10 @@ namespace AssisterApi
 
 
             //Repositories
-            services.AddScoped<IUserRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IConsultationsRepository, ConsultationsRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IUpdateLogsRepository, UpdateLogsRepository>();
 
 
 
@@ -149,7 +152,7 @@ namespace AssisterApi
 
        
             
-            initializer.LoadDB();
+           // initializer.LoadDB();
         }
 
         

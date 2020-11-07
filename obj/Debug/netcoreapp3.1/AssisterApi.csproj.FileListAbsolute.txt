@@ -283,7 +283,6 @@ W:\AssisterApi\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 W:\AssisterApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 W:\AssisterApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 W:\AssisterApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-W:\AssisterApi\obj\Debug\netcoreapp3.1\AssisterApi.csprojAssemblyReference.cache
 W:\AssisterApi\obj\Debug\netcoreapp3.1\AssisterApi.AssemblyInfoInputs.cache
 W:\AssisterApi\obj\Debug\netcoreapp3.1\AssisterApi.AssemblyInfo.cs
 W:\AssisterApi\obj\Debug\netcoreapp3.1\AssisterApi.csproj.CoreCompileInputs.cache
@@ -297,3 +296,4 @@ W:\AssisterApi\obj\Debug\netcoreapp3.1\AssisterApi.dll
 W:\AssisterApi\obj\Debug\netcoreapp3.1\AssisterApi.xml
 W:\AssisterApi\obj\Debug\netcoreapp3.1\AssisterApi.pdb
 W:\AssisterApi\obj\Debug\netcoreapp3.1\AssisterApi.genruntimeconfig.cache
+W:\AssisterApi\obj\Debug\netcoreapp3.1\AssisterApi.csprojAssemblyReference.cache

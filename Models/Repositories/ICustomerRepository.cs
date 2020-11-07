@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AssisterApi.Models.Repositories
 {
-    interface ICustomerRepository
+    public interface ICustomerRepository
     {
         public void Add(Customer customer);
 

@@ -47,7 +47,13 @@ namespace AssisterApi.Data.Repositories
 
         public void Update(User user)
         {
-            throw new NotImplementedException();
+            _context.Update(user);
+        }
+
+        public void SafeUpdate(User user)
+        {
+            _context.SafeUpdate(user);
+            _context.FirstSave();
         }
     }
 }

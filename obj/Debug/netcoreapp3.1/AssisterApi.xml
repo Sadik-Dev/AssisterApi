@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AssisterApi</name>
+    </assembly>
+    <members>
+        <member name="M:AssisterApi.Controllers.ConsultationsController.GetConsultations">
+            <summary>
+            Get all consultations ordered by date
+            </summary>
+            <returns>array of consultations</returns>
+        </member>
+        <member name="M:AssisterApi.Controllers.ConsultationsController.PostConsultation(AssisterApi.Models.Consultation)">
+            <summary>
+            Make a new Consultation
+            </summary>
+        </member>
+        <member name="M:AssisterApi.Controllers.UpdateLogsController.isUserUpToDate">
+            <summary>
+            Know if user is up to date
+            </summary>
+            <returns>True or false</returns>
+        </member>
+        <member name="M:AssisterApi.Controllers.UsersController.GetUser(System.Int32)">
+            <summary>
+            Get the user with given id
+            </summary>
+            <param name="id">the id of the user</param>
+            <returns>The User</returns>
+        </member>
+        <member name="M:AssisterApi.Controllers.UsersController.Authenticate(AssisterApi.DTOs.LoginDTO)">
+            <summary>
+            Login
+            </summary>
+            <returns>The logged in employee</returns>
+        </member>
+        <member name="M:AssisterApi.Controllers.UsersController.PostEmployee(AssisterApi.Models.User)">
+            <summary>
+            Make a new User
+            </summary>
+        </member>
+    </members>
+</doc>

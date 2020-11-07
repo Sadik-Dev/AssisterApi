@@ -37,7 +37,7 @@ namespace AssisterApi.Data.Repositories
 
         public Customer GetBy(int id)
         {
-            throw new NotImplementedException();
+            return  _customers.SingleOrDefault(c => c.Id == id);
         }
 
         public void SaveChanges()

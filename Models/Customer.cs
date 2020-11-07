@@ -16,7 +16,6 @@ namespace AssisterApi.Models
 		public String Password { get; set; }
 
 
-		public Media Storage { get; set; }
 
 		public Customer()
         {
@@ -28,7 +27,6 @@ namespace AssisterApi.Models
 			Name = name;
 			Email = email;
 			Password = Convert.ToBase64String(Encoding.UTF8.GetBytes(password));
-			Storage = new Folder(name);
 			Invoices = new List<Invoice>();
 			Appointments = new List<Consultation>();
 
