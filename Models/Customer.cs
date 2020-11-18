@@ -14,6 +14,7 @@ namespace AssisterApi.Models
 		public String Email { get; set; }
 		[JsonIgnore]
 		public String Password { get; set; }
+		public String Gender { get; set; }
 
 
 
@@ -22,14 +23,14 @@ namespace AssisterApi.Models
 
         }
 
-		public Customer(String name, String email, String password)
+		public Customer(String name, String email, String password, String gender)
         {
 			Name = name;
 			Email = email;
 			Password = Convert.ToBase64String(Encoding.UTF8.GetBytes(password));
 			Invoices = new List<Invoice>();
 			Appointments = new List<Consultation>();
-
+			Gender = gender;
 		}
 
 		public void addInvoice(Invoice invoice)

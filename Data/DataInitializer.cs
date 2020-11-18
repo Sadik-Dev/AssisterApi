@@ -26,8 +26,8 @@ namespace AssisterApi.Data
                if (_dbContext.Database.EnsureCreated())
                {
                 User sadik = new User("SadikDev", "dsk0@live.fr", Convert.ToBase64String(Encoding.UTF8.GetBytes("1974sadik")));
-                Customer ahmed = new Customer("Ahmed Sadik", "valenco1@hotmail.be", "singes");
-                Customer lisa = new Customer("Lisa Marzouki", "lisa@outlook.be", "lisa123lisa");
+                Customer ahmed = new Customer("Ahmed Sadik", "valenco1@hotmail.be", "singes","male");
+                Customer lisa = new Customer("Lisa Marzouki", "lisa@outlook.be", "lisa123lisa", "female");
 
                 string dateString = "2020/12/04 16:54";
                 DateTime oDate = DateTime.Parse(dateString);

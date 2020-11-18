@@ -15,6 +15,31 @@
             Make a new Consultation
             </summary>
         </member>
+        <member name="M:AssisterApi.Controllers.ConsultationsController.GetConsultation(System.Int32)">
+            <summary>
+            Get the consultation with given id
+            </summary>
+            <param name="id">the id of the consultation</param>
+            <returns>The consultation</returns>
+        </member>
+        <member name="M:AssisterApi.Controllers.CustomersController.GetCustomers">
+            <summary>
+            Get all customers ordered by nqme
+            </summary>
+            <returns>array of customers</returns>
+        </member>
+        <member name="M:AssisterApi.Controllers.CustomersController.PostCustomer(AssisterApi.Models.Customer)">
+            <summary>
+            Make a new Customer
+            </summary>
+        </member>
+        <member name="M:AssisterApi.Controllers.CustomersController.GetCustomer(System.Int32)">
+            <summary>
+            Get the customer with given id
+            </summary>
+            <param name="id">the id of the customer</param>
+            <returns>The customer</returns>
+        </member>
         <member name="M:AssisterApi.Controllers.UpdateLogsController.isUserUpToDate">
             <summary>
             Know if user is up to date

@@ -70,7 +70,22 @@ namespace AssisterApi.Controllers
 
             _consultationsRepository.Add(consultation);
             _consultationsRepository.SaveChanges();
-            return CreatedAtAction(nameof(GetConsultations), new { id = consultation.Id }, consultation);
+            return CreatedAtAction(nameof(GetConsultation), new { id = consultation.Id }, consultation);
+
+        }
+
+        // GET: api/Consultations/id
+        /// <summary>
+        /// Get the consultation with given id
+        /// </summary>
+        /// <param name="id">the id of the consultation</param>
+        /// <returns>The consultation</returns>
+        [HttpGet("{id}")]
+        public ActionResult<Consultation> GetConsultation(int id)
+        {
+            Consultation consultation = _consultationsRepository.GetBy(id);
+
+            return consultation;
 
         }
     }

@@ -22,7 +22,7 @@ namespace AssisterApi.Data.Repositories
 
         public void Add(Customer customer)
         {
-            throw new NotImplementedException();
+            _customers.Add(customer);
         }
 
         public void Delete(Customer customer)
@@ -32,7 +32,7 @@ namespace AssisterApi.Data.Repositories
 
         public IEnumerable<Customer> GetAll()
         {
-            throw new NotImplementedException();
+            return _customers;
         }
 
         public Customer GetBy(int id)
