@@ -32,7 +32,7 @@ namespace AssisterApi.Data.Repositories
 
         public IEnumerable<Customer> GetAll()
         {
-            return _customers;
+            return _customers.Include(c => c.Appointments);
         }
 
         public Customer GetBy(int id)

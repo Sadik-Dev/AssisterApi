@@ -8,8 +8,8 @@ namespace AssisterApi.Models
 	public class Customer
 	{
 		public int Id { get; set; }
-		private IList<Invoice> Invoices { get; set; }
-		private IList<Consultation> Appointments { get; set; }
+		public IList<Invoice> Invoices { get; set; }
+		public IList<Consultation> Appointments { get; set; }
 		public String Name { get; set; }
 		public String Email { get; set; }
 		[JsonIgnore]
