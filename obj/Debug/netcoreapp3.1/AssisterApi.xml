@@ -40,6 +40,11 @@
             <param name="id">the id of the customer</param>
             <returns>The customer</returns>
         </member>
+        <member name="M:AssisterApi.Controllers.CustomersController.PutCustomer(AssisterApi.Models.Customer)">
+            <summary>
+            Modifies a Customer
+            </summary>
+        </member>
         <member name="M:AssisterApi.Controllers.UpdateLogsController.isUserUpToDate">
             <summary>
             Know if user is up to date

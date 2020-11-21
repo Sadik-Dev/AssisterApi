@@ -47,7 +47,7 @@ namespace AssisterApi.Data.Repositories
 
         public void Update(Customer customer)
         {
-            throw new NotImplementedException();
+            _context.Update(customer);
         }
     }
 }

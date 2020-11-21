@@ -59,5 +59,27 @@ namespace AssisterApi.Controllers
             return customer;
 
         }
+
+        // PUT: api/Customers
+        /// <summary>
+        /// Modifies a Customer
+        /// </summary>
+        [HttpPut]
+        public IActionResult PutCustomer( Customer customer)
+        {
+
+            Customer updatedCustomer = _customerRepository.GetBy(customer.Id);
+
+            updatedCustomer.BirthDate = customer.BirthDate;
+            updatedCustomer.Email = customer.Email;
+            updatedCustomer.Gender = customer.Gender;
+            updatedCustomer.Name = customer.Name;
+
+
+            _customerRepository.Update(updatedCustomer);
+            _customerRepository.SaveChanges();
+            return NoContent();
+        }
     }
 }
+

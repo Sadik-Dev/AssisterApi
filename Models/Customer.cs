@@ -15,6 +15,8 @@ namespace AssisterApi.Models
 		[JsonIgnore]
 		public String Password { get; set; }
 		public String Gender { get; set; }
+		public DateTime BirthDate { get; set; }
+		public long RijkRegisterNummer { get; set; }
 
 
 
@@ -23,7 +25,7 @@ namespace AssisterApi.Models
 
         }
 
-		public Customer(String name, String email, String password, String gender)
+		public Customer(String name, String email, String password, String gender, long rijkregisternummer, DateTime birthdate)
         {
 			Name = name;
 			Email = email;
@@ -31,6 +33,8 @@ namespace AssisterApi.Models
 			Invoices = new List<Invoice>();
 			Appointments = new List<Consultation>();
 			Gender = gender;
+			RijkRegisterNummer = rijkregisternummer;
+			BirthDate = birthdate;
 		}
 
 		public void addInvoice(Invoice invoice)
