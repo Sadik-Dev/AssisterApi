@@ -52,7 +52,7 @@ namespace AssisterApi.Controllers
             _usersRepository.SafeUpdate(user);
 
             Console.WriteLine(user.LastFetch);
-            return _consultationsRepository.GetAll().OrderBy(r => r.Date);
+            return _consultationsRepository.GetAll();
         }
 
         // POST: api/Consultations
@@ -87,6 +87,27 @@ namespace AssisterApi.Controllers
 
             return consultation;
 
+        }
+
+
+        // PUT: api/Consultations
+        /// <summary>
+        /// Modifies a Consultation
+        /// </summary>
+        [HttpPut]
+        public IActionResult PutCustomer(Consultation consultation)
+        {
+
+            Consultation updatedConsultation = _consultationsRepository.GetBy(consultation.Id);
+            Customer customer = _customerRepository.GetBy(consultation.Customer.Id);
+
+            updatedConsultation.Customer = customer;
+            updatedConsultation.Date = consultation.Date;
+       
+
+            _consultationsRepository.Update(updatedConsultation);
+            _consultationsRepository.SaveChanges();
+            return NoContent();
         }
     }
 }

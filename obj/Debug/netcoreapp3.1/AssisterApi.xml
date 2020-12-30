@@ -22,6 +22,11 @@
             <param name="id">the id of the consultation</param>
             <returns>The consultation</returns>
         </member>
+        <member name="M:AssisterApi.Controllers.ConsultationsController.PutCustomer(AssisterApi.Models.Consultation)">
+            <summary>
+            Modifies a Consultation
+            </summary>
+        </member>
         <member name="M:AssisterApi.Controllers.CustomersController.GetCustomers">
             <summary>
             Get all customers ordered by nqme

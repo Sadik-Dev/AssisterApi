@@ -74,6 +74,7 @@ namespace AssisterApi.Controllers
             updatedCustomer.Email = customer.Email;
             updatedCustomer.Gender = customer.Gender;
             updatedCustomer.Name = customer.Name;
+            updatedCustomer.RijkRegisterNummer = customer.RijkRegisterNummer;
 
 
             _customerRepository.Update(updatedCustomer);
